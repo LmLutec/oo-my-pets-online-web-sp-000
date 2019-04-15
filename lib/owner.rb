@@ -19,8 +19,6 @@ class Owner
     "I am a #{@species}." 
   end 
   
-    
-  
   def self.all  
     @@all 
   end 
@@ -64,13 +62,17 @@ class Owner
   end 
   
   def sell_pets 
-    self.pets.each do |pet| 
+    self.pets.each do |pet|
       pet.mood = "nervous"
     end 
   end 
   
   def list_pets 
-    @pets 
+    fish_count = pets[:fishes].count 
+    dog_count = pets[:dogs].count 
+    cat_count = pets[:cats].count 
+    
+    "I have #{fish_count} fish, #{dog_count} dog(s), and #{cat_count} cat(s)."
   end 
   
 end
